@@ -1,6 +1,7 @@
 from flask import Flask
 import pickle
 import random
+from data.issueScrapper import scrapper
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
@@ -15,6 +16,11 @@ def issueFunc():
 @app.route('/', methods=['GET'])
 def index():
     return 'Hello, GRE takers. Visit /issue or /argument'
+
+@app.route('/issue/scrape', methods=['GET'])
+def issueScrape():
+    t = scrapper()
+    return t
 
 
 if __name__ == '__main__':
