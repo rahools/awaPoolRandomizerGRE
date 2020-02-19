@@ -1,7 +1,7 @@
 from flask import Flask
 import pickle
 import random
-from data.issueScrapper import scrapper
+# from data.issueScrapper import scrapper
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
@@ -13,11 +13,11 @@ def issueFunc():
 
     return issue[random.choice(range(len(issue)))]
 
-@app.route('/issue/scrape', methods=['GET'])
-def issueScrape():
-    t = scrapper()
+# @app.route('/issue/scrape', methods=['GET'])
+# def issueScrape():
+#     t = scrapper()
     
-    return t
+#     return t
 
 @app.route('/', methods=['GET'])
 def index():
