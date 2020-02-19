@@ -7,7 +7,7 @@ app.config["DEBUG"] = True
 
 @app.route('/issue', methods=['GET'])
 def issueFunc():
-    with open('issue.pkl', 'rb') as f:
+    with open('data/issue.pkl', 'rb') as f:
         issue = pickle.load(f)
 
     return issue[random.choice(range(len(issue)))]
