@@ -13,15 +13,15 @@ def issueFunc():
 
     return issue[random.choice(range(len(issue)))]
 
-@app.route('/', methods=['GET'])
-def index():
-    return 'Hello, GRE takers. Visit /issue or /argument'
-
 @app.route('/issue/scrape', methods=['GET'])
 def issueScrape():
     t = scrapper()
+    
     return t
 
+@app.route('/', methods=['GET'])
+def index():
+    return 'Hello, GRE takers. Visit /issue or /argument'
 
 if __name__ == '__main__':
     app.run(host = '0.0.0.0', port = 5000)

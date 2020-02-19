@@ -19,12 +19,13 @@ def scrapper():
             if len(temp) != 0:
                 issue.append(temp)
             temp = ''
+            
     try:
         with open('data/issue.pkl', 'wb') as f:
             pickle.dump(issue, f)
     except:
         pass
-    
+
     try:
         with open('issue.pkl', 'wb') as f:
             pickle.dump(issue, f)
