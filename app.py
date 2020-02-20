@@ -3,21 +3,22 @@ import pickle
 import random
 # from data.issueScrapper import scrapper
 
+with open('data/issue.pkl', 'rb') as f:
+        issue = pickle.load(f)
+
+with open('data/argument.pkl', 'rb') as f:
+        argument = pickle.load(f)
+
 app = Flask(__name__)
 app.config["DEBUG"] = True
 
 @app.route('/issue', methods=['GET'])
 def issueFunc():
-    with open('data/issue.pkl', 'rb') as f:
-        issue = pickle.load(f)
-
     return issue[random.choice(range(len(issue)))]
 
-# @app.route('/issue/scrape', methods=['GET'])
-# def issueScrape():
-#     t = scrapper()
-    
-#     return t
+@app.route('/argument', methods=['GET'])
+def argumentFunc():
+    return argument[random.choice(range(len(argument)))]
 
 @app.route('/', methods=['GET'])
 def index():
