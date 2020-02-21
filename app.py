@@ -22,7 +22,7 @@ def argumentFunc():
 
 @app.route('/', methods=['GET'])
 def index():
-    return 'Hello, GRE takers. Visit /issue or /argument'
+    return 'Hello, GRE takers. Visit <a href="/issue">/issue</a> or <a href="/argument">/argument</a>'
 
 if __name__ == '__main__':
     app.run(host = '0.0.0.0', port = 5000)
